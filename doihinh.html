@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Sơ Đồ Đội Hình 4-3-3</title>
+  <style>
+    body {
+      background-color: #014d00;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .team-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      margin-bottom: 20px;
+    }
+
+    .team-header img {
+      height: 60px;
+    }
+
+    .team-header .info {
+      flex-grow: 1;
+    }
+
+    .team-header h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .pitch {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        height: 600px;
+        background: url('soccer-pitch-lines.png') no-repeat center center;
+        background-size: cover;
+        border: 2px solid white;
+        border-radius: 8px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+        }
+
+
+    .player {
+      position: absolute;
+      width: 110px;
+      text-align: center;
+    }
+
+    .player-frame {
+      background: #1c1c1c;
+      border: 2px solid yellow;
+      border-radius: 12px;
+      padding: 6px;
+    }
+
+    .player-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .player-info {
+      padding: 4px 0;
+    }
+
+    .number {
+      background-color: yellow;
+      color: black;
+      border-radius: 50%;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      font-weight: bold;
+    }
+
+    .flag {
+      height: 16px;
+      vertical-align: middle;
+    }
+
+    .stat {
+      font-size: 12px;
+      color: lightgray;
+    }
+
+    /* Vị trí cầu thủ */
+    /* Tiền đạo */
+    .fw-left { top: 0px; left: 200px; }
+    .fw-center { top: 0px; left: 440px; }
+    .fw-right { top: 0px; left: 680px; }
+    /* Tiền vệ */
+    .mf-left { top: 200px; left: 150px; }
+    .mf-center { top: 200px; left: 440px; }
+    .mf-right { top: 200px; left: 730px; }
+    /* Hậu vệ */
+    .df-left { top: 400px; left: 100px; }
+    .df-lc { top: 400px; left: 300px; }
+    .df-rc { top: 400px; left: 580px; }
+    .df-right { top: 400px; left: 780px; }
+    /* Thủ môn */
+    .gk { top: 480px; left: 440px; }
+  </style>
+</head>
+<body>
+
+  <div class="team-header">
+    <img src="HoTran.jpg" alt="Logo">
+    <div class="info">
+      <h1>FC MANCHESTER HỌ NHÀ HUẾ </h1>
+      <p>HLV: BÙI THỊ Ý</p>
+    </div>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAh1BMVEXaJR3//wDZEx7qlxTXAB7ZHR3aIB3//QDzxg7pkBXZGB3YCx7rmxTqlhTbKB320wz1zg3iZBnwtxD99wPhXRn88QXiaRj54gntpxLjcBjkdhf65gjcMxzurBL76wfsohP43AroihXnhBbmfhfvshHgVRrfTRvyvw/dPBv10AzzyA7wthHeSBszN/CXAAAEGElEQVR4nO3d6XaiQBAFYLst2hHc17jFJTFxEt//+UZEkIYGcZmjVN/v98wcqPE22FRJpQIAAAAAAAAAAAAAAAAAAAAAAAAAZ61nH8DroT/07EN4NWondurZB/FiZEM05LMP4sXQWIwRHo2aCyHmCE+cbB5q0kR44mh1qMkK4YlRLeFrITxnsn6sSR3hOTtGR4g2whNRSgQUwhOS61NN1ghPiNqnmiA8EVeE3GcfyqtwN1FNNihKgDpRTToIT8ATZ96zD+Y1uB+xmnwgPD76idXkB+HxkYhDTQ7cqVaTKcLjb05rNcFWdSUZHYTnwJ0kajJBeOg7UZNvfFColqhJzfqaOCORNHKefVBP5iWjcwiP7ff3qeggPE43VRIhunaHx+sZatKzOzzUN9Skb3V4nIGhJEIMbA6P92msyafN4aGhsSZDi8PjbI0lEWLLMDyOLIQWGTVZULF/oESlcybLahF1c3QO4akX+vvLaYmK4ppuOx6vV6ptBRql79kfblSypdh12pdP6i5tVboH7oqa/7UkVSpjX4b3lbWE3m/4VbLchJzUvuKjfFOJLjgJNL18fjf4KOmHJCDn44dXZDwv3eKqU/T24JK8lXJx1dHAtEdyq9qg1LkJubJz+VwL+uuW6tY1m6L1g0pSZ5CbkLd7f0BFhntWe00O3f+tsFfimxIzSj4rv9aExeKqk63VHRVZtUp+U2KmqHFzSZaMFlcdbW+7VelvGeYm5Hh/Llcg5cfjtrjqaHO5Bgkbxh+SgJzPrqrIbMdycdWpzCcYJp9sF1cddYsutf2ybUPfjoqutBY1y3qXq3HC6gtOHm0QI581YxraIEY+a8Y0kt3keSypiXvNZr4lYxqFrzo+S64810THkvCkBjHyWTGmceUDUyvGNAzd5Hls6DQ3DGLks2BMw9hNnseCTvMro2NDp7lxEOMoc+llP6bh/ZpPfLilrLamX+7hMQ5iHG5XPafiZNzgcg9PxiDGaRuazJsIzMc0jIMYs6jxyLyBzXxMwzSIsYhtQxs3sHmPaRgGMWpd/Yypm75YcxzTiHipT0E71XjkuqkO7AXn8KSi0zQ8vlFUtyg8ap8414zGI2+fqN2e74MvqfeFZndDJzuw3/g+HyWtq22alwi9A/udbXi06IwvNB7JVrwDm2145PJ8kpcbjxTF/zjX8FB0k1qs8SjW1jRjGh61C8+wI4ttPLte1IHN9IUAMmzxWxf/T486sJm+EICCRfN9d81dadiBzfOFAMef9Rfi98rGI0XBV2mWLwSQVf/Ubmg8CuZyqxzD4/82+eqm+VepVjxfCOD/rH/jxoY9RVWWLwSQjf4d86/01Wd45XGrd/0KhSOrDB+m33tKDEsCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAzD+q9i3I9cDwkgAAAABJRU5ErkJggg==" alt="Cờ">
+  </div>
+
+  <div class="pitch">
+    <!-- Tiền đạo -->
+    <div class="player fw-left">
+      <div class="player-frame">
+        <img src="ChauVit100.jpg" alt="Tiền đạo trái" class="player-photo">
+        <div class="player-info">
+          <div class="number">11</div><br>
+          <span class="name">MPhuongNha</span><br>
+          <img src="https://img.icons8.com/?size=100&id=15509&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 85</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player fw-center">
+      <div class="player-frame">
+        <img src="ChauHoa.jpg" alt="Trung phong" class="player-photo">
+        <div class="player-info">
+          <div class="number">9</div><br>
+          <span class="name">HoaHaDong</span><br>
+          <img src="https://img.icons8.com/?size=100&id=60257&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 90</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player fw-right">
+      <div class="player-frame">
+        <img src="ChauMinhDuc.jpg" alt="Tiền đạo phải" class="player-photo">
+        <div class="player-info">
+          <div class="number">7</div><br>
+          <span class="name">Ducbélé</span><br>
+          <img src="https://img.icons8.com/?size=100&id=15497&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 88</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tiền vệ -->
+    <div class="player mf-left">
+      <div class="player-frame">
+        <img src="ChauHue2k3.jpg" class="player-photo">
+        <div class="player-info">
+          <div class="number">8</div><br>
+          <span class="name">HueMU</span><br>
+          <img src="https://img.icons8.com/?size=100&id=18212&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 84</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player mf-center">
+      <div class="player-frame">
+        <img src="ChauHoai.jpg" class="player-photo">
+        <div class="player-info">
+          <div class="number">6</div><br>
+          <span class="name">Hoai Sensei</span><br>
+          <img src="https://img.icons8.com/?size=100&id=22435&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 86</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player mf-right">
+      <div class="player-frame">
+        <img src="ChauBang.jpg" class="player-photo">
+        <div class="player-info">
+          <div class="number">10</div><br>
+          <span class="name">Bang Waipu</span><br>
+          <img src="https://img.icons8.com/?size=100&id=22435&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 87</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hậu vệ -->
+    <div class="player df-left">
+      <div class="player-frame">
+        <img src="ChauMinhTit.jpg" class="player-photo">
+        <div class="player-info">
+          <div class="number">3</div><br>
+          <span class="name">Tit Russian</span><br>
+          <img src="https://img.icons8.com/?size=100&id=15528&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 83</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player df-lc">
+      <div class="player-frame">
+        <img src="ChauMaiLinh.jpg" class="player-photo">
+        <div class="player-info">
+          <div class="number">4</div><br>
+          <span class="name">BongMaguire</span><br>
+          <img src="https://img.icons8.com/?size=100&id=18212&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 84</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player df-rc">
+      <div class="player-frame">
+        <img src="ChauNhatMinh.jpg" class="player-photo">
+        <div class="player-info">
+          <div class="number">5</div><br>
+          <span class="name">Minh Foden</span><br>
+          <img src="https://img.icons8.com/?size=100&id=18212&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 84</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player df-right">
+      <div class="player-frame">
+        <img src="ChauHaVy.jpg" class="player-photo">
+        <div class="player-info">
+          <div class="number">2</div><br>
+          <span class="name">Ha Vy</span><br>
+          <img src="https://img.icons8.com/?size=100&id=60257&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 83</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thủ môn -->
+    <div class="player gk">
+      <div class="player-frame">
+        <img src="ChauCanh.jpg" class="player-photo">
+        <div class="player-info">
+          <div class="number">1</div><br>
+          <span class="name">CanhOnana</span><br>
+          <img src="https://img.icons8.com/?size=100&id=15515&format=png&color=000000" class="flag">
+          <div class="stat">OVR: 89</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
